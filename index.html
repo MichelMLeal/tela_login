@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div id="page" class="flex">
+      <div>
+        <header>
+          <img src="assets/logo.svg" alt="logo vertigo" srcset="assets/logo.svg" />
+        </header>
+        <main>
+          <div class="headline">
+            <h1>Acesse a Plataforma</h1>
+            <p>Faça login ou registre-se para começar a construir seus projetos ainda hoje.</p>
+          </div>
+          <form action="">
+            <div class="input-wrapper">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" placeholder="Digite seu E-mail" required />
+            </div>
+
+            <div class="input-wrapper">
+              <div class="label-wrapper flex">
+                <label for="password">Senha</label>
+                <a href="">Esqueceu a senha?</a>
+              </div>
+              <input type="password" name="password" id="password" placeholder="Digite sua Senha" required />
+              <img
+                onclick="togglePassword()"
+                class="eye"
+                src="assets/eye-off.svg"
+                alt=""
+                srcset="assets/eye-off.svg"
+              />
+              <img
+                onclick="togglePassword()"
+                class="eye hide"
+                src="assets/eye.svg"
+                alt=""
+                srcset="assets/eye.svg"
+              />
+            </div>
+
+            <button type="submit">Entrar</button>
+
+            <div class="help">Ainda não tem conta? <a href="">Inscreva-se</a></div>
+          </form>
+        </main>
+      </div>
+      <img src="assets/bg.jpg" alt="imagem de fundo" srcset="assets/bg.jpg" />
+    </div>
+    <script>
+      function togglePassword() {
+        document.querySelectorAll('.eye').forEach(element => {
+          element.classList.toggle('hide')
+        })
+
+        document.querySelector('#password').type =
+          document.querySelector('#password').type === 'password' ? 'text' : 'password'
+      }
+    </script>
+  </body>
+</html>
